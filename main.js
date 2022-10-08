@@ -14,6 +14,14 @@ let listarUsuario = document.querySelector("#lista");
 let mensajeAlerta = document.querySelector("#mensajeAlerta");
 let mensajeAlertaVerde = document.querySelector("#mensajeAlertaVerde");
 
+//Subir usuarios al LocalStorage
+
+
+function enviarDatos(userData) {
+  usuarios.push(userData);
+  localStorage.setItem("info", JSON.stringify(usuarios));
+}
+
 // Validaciones
 
 function validar() {
@@ -43,3 +51,5 @@ function validar() {
     }
     return isValid;
   }
+
+  
