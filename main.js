@@ -52,4 +52,17 @@ function validar() {
     return isValid;
   }
 
+  // Menajes de alters bootstrap
+
+function printMsg(mensaje) {
+  msg.innerHTML = mensaje;
+  msg2.innerHTML = mensaje;
+
+  setTimeout(function () {
+    mensajeAlertaVerde.style.opacity = 0;
+    mensajeAlerta.style.opacity = 0;
+    msg.innerHTML = "";
+  }, 3000);
+}
+
   
