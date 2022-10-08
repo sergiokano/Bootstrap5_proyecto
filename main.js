@@ -52,7 +52,7 @@ function validar() {
     return isValid;
   }
 
-  // Menajes de alters bootstrap
+  // Mensajes de alerts bootstrap
 
 function printMsg(mensaje) {
   msg.innerHTML = mensaje;
@@ -65,4 +65,19 @@ function printMsg(mensaje) {
   }, 3000);
 }
 
-  
+  // funcion para crear usuario
+
+function crearUsuario(e) {
+  e.preventDefault();
+  if (!validar()) {
+    return;
+  }
+  let userData = {
+    nombre: nombre.value,
+    correo: email.value,
+    contraseña: password.value,
+  };
+  enviarDatos(userData);
+  addNewUser(userData);
+  resetForm();
+}
