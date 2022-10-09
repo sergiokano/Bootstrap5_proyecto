@@ -28,8 +28,6 @@ const textAlertPassword = document.querySelector("#textAlertPassword");
 const alertSuccess = document.querySelector("#alertSuccess");
 const textAlertSuccess = document.querySelector("#textAlertSuccess");
 
-
-
 // let borrado = document.querySelector("#delete");
 // let validationEmail = /(\w+?@\w+?\x2E.+)/;
 // let usuarios = [];
@@ -46,7 +44,7 @@ boton.addEventListener("click", function (e) {
   e.preventDefault();
   userData();
   checkUser();
-//   checkEmail();
+  //   checkEmail();
 });
 
 // Funcion para crear los usuarios, validar la información y guardarlo en LocalStorage
@@ -72,37 +70,42 @@ function userData(e) {
   }
 }
 
-
 // Validación que los campos estén llenos, que el email esté de la forma correcta y que ambas contraseñas coincidan + Mensaje alerta
 
 function checkUser() {
-      if (
-        username.value === "" ||
-        email.value === "" ||
-        password.value === "" ||
-        passConfirm.value === ""
-      ) {
-        alertMessage.className = "alert alert-danger d-flex align-items-center";
-        textAlert.innerHTML = "Rellena todos los campos";
-      } else if (validationEmail.test(email.value) === false) {
-        alertEmail.className = "alert alert-danger d-flex align-items-center";
-        textAlertEmail.innerHTML =
-          "Formato correo electrónico incorrecto 'ejemplo@mail.com' ";
-      } 
-     else if (validationPass.test(password.value) === false) {
-        alertPassword.className = "alert alert-danger d-flex align-items-center";
-        textAlertPassword.innerHTML =
-          "La contraseña debe tener entre 4 y 8 carácteres e incluir al menos un número";
-      } 
-      else if (password.value !== passConfirm.value) {
-        alertPassword.className = "alert alert-danger d-flex align-items-center";
-        textAlertPassword.innerHTML =
-          "Las contraseñas deben coincidir";
-      } 
-      else {
-        alertSuccess.className = "alert alert-success d-flex align-items-center";
-        textAlertSuccess.innerHTML =
-          "¡Usuario registrado correctamente!";
-      }
-    }
+  if (
+    username.value === "" ||
+    email.value === "" ||
+    password.value === "" ||
+    passConfirm.value === ""
+  ) {
+    alertMessage.className = "alert alert-danger d-flex align-items-center";
+    textAlert.innerHTML = "Rellena todos los campos";
+  } else if (validationEmail.test(email.value) === false) {
+    alertEmail.className = "alert alert-danger d-flex align-items-center";
+    textAlertEmail.innerHTML =
+      "Formato correo electrónico incorrecto 'ejemplo@mail.com' ";
+  } else if (validationPass.test(password.value) === false) {
+    alertPassword.className = "alert alert-danger d-flex align-items-center";
+    textAlertPassword.innerHTML =
+      "La contraseña debe tener entre 4 y 8 carácteres e incluir al menos un número";
+  } else if (password.value !== passConfirm.value) {
+    alertPassword.className = "alert alert-danger d-flex align-items-center";
+    textAlertPassword.innerHTML = "Las contraseñas deben coincidir";
+  } else {
+    alertSuccess.className = "alert alert-success d-flex align-items-center";
+    textAlertSuccess.innerHTML = "¡Usuario registrado correctamente!";
+  }
+//   Tiempo para que desaparezca el mensajeAlerta, 3 segundos.
+// La animación fadein fadeout está en el CSS
+  setTimeout(() => {
+    alertMessage.className = "d-none";
+  }, 4000);
+  setTimeout(() => {
+    alertPassword.className = "d-none";
+  }, 4000);
+  setTimeout(() => {
+    alertSuccess.className = "d-none";
+  }, 4000);
 
+}

@@ -1,0 +1,30 @@
+
+/* Fade In mensaje alertas rojas */
+[role=alert] {
+    animation: fadeIn 1s;
+  }
+
+
+
+
+/* Fade Out mensaje usuario registrado correctamente */
+#alertSuccess {
+    animation: fadeOut 5s;
+  }
+
+  @keyframes fadeOut {
+    from{
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+  } 
+  @keyframes fadeIn {
+    from{
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+  } 
