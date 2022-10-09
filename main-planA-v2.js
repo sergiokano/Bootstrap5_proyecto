@@ -14,8 +14,17 @@ let generalCheck = document.getElementById("generalCheck");
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let validationPass = /^(?=.*\d).{4,8}$/;
 // Password must be between 4 and 8 digits long and include at least one numeric digit. ej:aaa123
+
+// Alertas y mensajes alerta
 const alertMessage = document.querySelector("#alertMessage");
-const alert = document.querySelector("#alert");
+const textAlert = document.querySelector("#textAlert");
+
+const alertEmail = document.querySelector("#alertEmail");
+const textAlertEmail = document.querySelector("#textAlertEmail");
+
+const alertPassword = document.querySelector("#alertPassword");
+const textAlertPassword = document.querySelector("#textAlertPassword");
+
 
 
 // let borrado = document.querySelector("#delete");
@@ -33,7 +42,8 @@ let users = JSON.parse(localStorage.getItem("Usuarios")) || [];
 boton.addEventListener("click", function (e) {
   e.preventDefault();
   userData();
-  confirmUser();
+  checkUser();
+//   checkEmail();
 });
 
 // Funcion para crear los usuarios, validar la información y guardarlo en LocalStorage
@@ -59,16 +69,47 @@ function userData(e) {
   }
 }
 
-// Validar que los campos no están vacíos
+// Validar que los campos están rellenados
 
-function confirmUser() {
-    if (
+// function checkUser() {
+//   let validUser = false;
+//   if (
+//     username.value === "" ||
+//     email.value === "" ||
+//     password.value === "" ||
+//     passConfirm.value === ""
+//   ) {
+//     alertMessage.className = "alert alert-danger d-flex align-items-center";
+//     textAlert.innerHTML = "Rellena todos los campos";
+//   } else if (validationEmail.test(email.value) == false) {
+//     alertEmail.className = "alert alert-danger d-flex align-items-center";
+//     textAlertEmail.innerHTML =
+//       "Formato correo electrónico incorrecto 'ejemplo@mail.com' ";
+//   } 
+  
+//   console.log(validUser);
+// }
+
+// Validación que los campos estén llenos, que el email esté de la forma correcta y que ambas contraseñas coincidan
+
+function checkUser() {
+      if (
         username.value === "" ||
-       email.value === "" ||
-       password.value === "" ||
-       passConfirm.value === "") {
-        alertMessage.className = "alert alert-danger d-flex align-items-center"
-        alert.innerHTML = "Rellena todos los campos"
-       }
+        email.value === "" ||
+        password.value === "" ||
+        passConfirm.value === ""
+      ) {
+        alertMessage.className = "alert alert-danger d-flex align-items-center";
+        textAlert.innerHTML = "Rellena todos los campos";
+      } else if (validationEmail.test(email.value) === false) {
+        alertEmail.className = "alert alert-danger d-flex align-items-center";
+        textAlertEmail.innerHTML =
+          "Formato correo electrónico incorrecto 'ejemplo@mail.com' ";
+      } 
+     else if (validationPass.test(password.value) === false) {
+        alertPassword.className = "alert alert-danger d-flex align-items-center";
+        textAlertPassword.innerHTML =
+          "La contraseña debe tener entre 4 y 8 carácteres e incluir al menos un número";
+      } 
+    }
 
-}

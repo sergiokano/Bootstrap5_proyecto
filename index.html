@@ -53,11 +53,12 @@
                 </div>
 
                 <div class></div>
-                <p class= "text-end" id="alert"></p>
+                <p class="text-end" id="textAlert"></p>
             </div>
 
 
 
+            <!-- Nombre -->
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nombre</label>
@@ -65,19 +66,52 @@
             </div>
 
             <div class="mb-3">
+
+                <!-- Alerta Email incorrecto -->
+
+                <div id="alertEmail" class="d-none alert alert-danger text-wrap" role="alert">
+
+                    <div id="spinner" class="spinner-grow text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+
+                    </div>
+
+                    <div class></div>
+                    <p class="text-end" id="textAlertEmail"></p>
+                </div>
+
+                <!-- Email -->
                 <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="mail" placeholder="Ingresa tu email">
             </div>
+
+            <!-- Contraseña -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Contraseña 1</label>
                 <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña">
             </div>
+            <!-- Contraseña 2 -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Contraseña 2</label>
                 <input type="password" class="form-control" id="password2" placeholder="Repite tu contraseña">
             </div>
+            <!-- Alerta Contraseña incorrecta -->
+
+            <div id="alertPassword" class="d-none alert alert-danger text-wrap" role="alert">
+
+                <div id="spinner" class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+
+                </div>
+
+                <div class></div>
+                <p class="text-end" id="textAlertPassword"></p>
+            </div>
+            
             <input type="submit" value="Registrar" id="btn" class="btn btn-primary btn-lg" />
             <input type="button" value="Reset" id="delete" class="btn btn-secondary btn-lg" />
+
+
         </form>
 
 
