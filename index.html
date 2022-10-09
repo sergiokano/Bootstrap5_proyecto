@@ -25,7 +25,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="#">Zona Usuarios</a>
-                    
+
                 </div>
             </div>
         </div>
@@ -52,41 +52,35 @@
             <input type="password" class="form-control" id="password2" placeholder="Repite tu contraseña">
         </div>
         <input type="submit" value="Registrar" id="btn" class="btn btn-primary btn-lg" />
-        <input type="submit" value="Reset" id="delete" class="btn btn-secondary btn-lg" />
-
+        <input type="button" value="Reset" id="delete" class="btn btn-secondary btn-lg" />
     </form>
-<!-- añado contenedor de alertas para los mensajes de registro correcto o incorrecto -->
-    <br />
-        <div class="contenedor-alerts">
-          <div
-            id="mensajeAlertaVerde"
-            class="spinner container-sm alert alert-success msg"
-          >
+
+
+
+    <div class=" contenedor-alerts">
+        <div id="mensajeAlertaVerde" class="spinner container-sm alert alert-success msg">
             <div class="spinner-grow text-success" role="status">
-              <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Loading...</span>
             </div>
             <p id="msg" class=""></p>
-          </div>
+        </div>
 
-          <div
-            id="mensajeAlerta"
-            class="spinner container-sm alert alert-danger msg"
-          >
+        <div id="mensajeAlerta" class="spinner container-sm alert alert-danger msg">
             <div class="spinner-grow text-danger" role="status">
-              <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Loading...</span>
             </div>
             <p id="msg2" class="error"></p>
-          </div>
         </div>
-        
-<!-- listado de usuarios creados -->
+    </div>
 
-        <div class="container mx-0">
-            <p class="lista-usuario" id="cards">Lista de Usuarios:</p>
-          </div>
-          <div class="list-group mt-5" id="lista"></div>
-        </div>
-    
+    <!-- listado de usuarios creados -->
+
+    <div class="container mx-0">
+        <p class="lista-usuario" id="cards">Lista de Usuarios:</p>
+    </div>
+    <div class="list-group mt-5" id="lista"></div>
+    </div>
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="main.js"></script>
