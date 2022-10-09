@@ -25,6 +25,9 @@ const textAlertEmail = document.querySelector("#textAlertEmail");
 const alertPassword = document.querySelector("#alertPassword");
 const textAlertPassword = document.querySelector("#textAlertPassword");
 
+const alertSuccess = document.querySelector("#alertSuccess");
+const textAlertSuccess = document.querySelector("#textAlertSuccess");
+
 
 
 // let borrado = document.querySelector("#delete");
@@ -69,28 +72,8 @@ function userData(e) {
   }
 }
 
-// Validar que los campos están rellenados
 
-// function checkUser() {
-//   let validUser = false;
-//   if (
-//     username.value === "" ||
-//     email.value === "" ||
-//     password.value === "" ||
-//     passConfirm.value === ""
-//   ) {
-//     alertMessage.className = "alert alert-danger d-flex align-items-center";
-//     textAlert.innerHTML = "Rellena todos los campos";
-//   } else if (validationEmail.test(email.value) == false) {
-//     alertEmail.className = "alert alert-danger d-flex align-items-center";
-//     textAlertEmail.innerHTML =
-//       "Formato correo electrónico incorrecto 'ejemplo@mail.com' ";
-//   } 
-  
-//   console.log(validUser);
-// }
-
-// Validación que los campos estén llenos, que el email esté de la forma correcta y que ambas contraseñas coincidan
+// Validación que los campos estén llenos, que el email esté de la forma correcta y que ambas contraseñas coincidan + Mensaje alerta
 
 function checkUser() {
       if (
@@ -111,5 +94,15 @@ function checkUser() {
         textAlertPassword.innerHTML =
           "La contraseña debe tener entre 4 y 8 carácteres e incluir al menos un número";
       } 
+      else if (password.value !== passConfirm.value) {
+        alertPassword.className = "alert alert-danger d-flex align-items-center";
+        textAlertPassword.innerHTML =
+          "Las contraseñas deben coincidir";
+      } 
+      else {
+        alertSuccess.className = "alert alert-success d-flex align-items-center";
+        textAlertSuccess.innerHTML =
+          "¡Usuario registrado correctamente!";
+      }
     }
 
