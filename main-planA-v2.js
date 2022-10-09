@@ -1,14 +1,13 @@
 // declaro constantes
 
-const form = document.getElementById("userForm");
+// const userForm = document.getElementById("userForm");
 const username = document.querySelector("#username");
 const email = document.querySelector("#mail");
 const password = document.querySelector("#password");
 const passConfirm = document.querySelector("#password2");
 const boton = document.querySelector("#btn");
-let msg = document.querySelector("#msg");
-let msg2 = document.querySelector("#msg2");
-// let msg3 = document.querySelector("#msg3");
+const reset = document.querySelector("#delete");
+
 let spinner = document.getElementById("spinner");
 let generalCheck = document.getElementById("generalCheck");
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
@@ -109,3 +108,5 @@ function checkUser() {
   }, 4000);
 
 }
+
+
