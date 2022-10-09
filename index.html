@@ -14,76 +14,111 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Formulario</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Zona Usuarios</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active link-dark" aria-current="page" href="#">Crear usuario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active link-dark" aria-current="page" href="/zonaUsuarios.HTML">Zona
+                                usuarios</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- formulario -->
-    <form action="userForm">
+    <main>
+        <!-- formulario -->
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
-        </div>
+        <form id="user-form">
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="mail" placeholder="Ingresa tu email">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Contraseña 1</label>
-            <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Contraseña 2</label>
-            <input type="password" class="form-control" id="password2" placeholder="Repite tu contraseña">
-        </div>
-        <input type="submit" value="Registrar" id="btn" class="btn btn-primary btn-lg" />
-        <input type="button" value="Reset" id="delete" class="btn btn-secondary btn-lg" />
-    </form>
+            <!-- este div contiene el mensaje de alerta + spinner -->
+            <div id="alertMessage" class="d-none alert alert-danger" role="alert">
+
+                <div id="spinner" class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+
+                </div>
+
+                <div class></div>
+                <p class= "text-end" id="alert"></p>
+            </div>
 
 
 
-    <div class=" contenedor-alerts">
-        <div id="mensajeAlertaVerde" class="spinner container-sm alert alert-success msg">
-            <div class="spinner-grow text-success" role="status">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="username" placeholder="Ingresa tu nombre">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="mail" placeholder="Ingresa tu email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña 1</label>
+                <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña 2</label>
+                <input type="password" class="form-control" id="password2" placeholder="Repite tu contraseña">
+            </div>
+            <input type="submit" value="Registrar" id="btn" class="btn btn-primary btn-lg" />
+            <input type="button" value="Reset" id="delete" class="btn btn-secondary btn-lg" />
+        </form>
+
+
+        <br>
+        <div class=" contenedor-alerts">
+
+
+
+            <!-- <div id="mensajeAlertaVerde" class="spinner container-sm alert alert-success msg">
+            <div id="spinner" class="d-none spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
             <p id="msg" class=""></p>
         </div>
 
-        <div id="mensajeAlerta" class="spinner container-sm alert alert-danger msg">
+        <!-- <div id="mensajeAlertaVerde" class="spinner container-sm alert alert-success msg">
+            <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p id="msg" class=""></p>
+        </div> -->
+
+            <!-- <div id="mensajeAlerta" class="spinner container-sm alert alert-danger msg">
             <div class="spinner-grow text-danger" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
             <p id="msg2" class="error"></p>
+        </div> --> -->
         </div>
-    </div>
 
-    <!-- listado de usuarios creados -->
+        <!-- listado de usuarios creados -->
 
-    <div class="container mx-0">
-        <p class="lista-usuario" id="cards">Lista de Usuarios:</p>
-    </div>
-    <div class="list-group mt-5" id="lista"></div>
-    </div>
+        <div class="container mx-0">
+            <p class="lista-usuario" id="cards">Lista de Usuarios:</p>
+        </div>
+        <div class="list-group mt-5" id="lista"></div>
+        </div>
 
-
+    </main>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="main.js"></script>
+    <script src="main-planA-v2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
