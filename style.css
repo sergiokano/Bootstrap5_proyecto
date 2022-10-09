@@ -4,9 +4,6 @@
     animation: fadeIn 1s;
   }
 
-
-
-
 /* Fade Out mensaje usuario registrado correctamente */
 #alertSuccess {
     animation: fadeOut 5s;

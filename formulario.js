@@ -1,6 +1,5 @@
 // declaro constantes
 
-// const userForm = document.getElementById("userForm");
 const username = document.querySelector("#username");
 const email = document.querySelector("#mail");
 const password = document.querySelector("#password");
@@ -9,7 +8,6 @@ const boton = document.querySelector("#btn");
 const reset = document.querySelector("#delete");
 
 let spinner = document.getElementById("spinner");
-let generalCheck = document.getElementById("generalCheck");
 let validationEmail = /(\w+?@\w+?\x2E.+)/;
 let validationPass = /^(?=.*\d).{4,8}$/;
 // Password must be between 4 and 8 digits long and include at least one numeric digit. ej:aaa123
@@ -27,12 +25,6 @@ const textAlertPassword = document.querySelector("#textAlertPassword");
 const alertSuccess = document.querySelector("#alertSuccess");
 const textAlertSuccess = document.querySelector("#textAlertSuccess");
 
-// let borrado = document.querySelector("#delete");
-// let validationEmail = /(\w+?@\w+?\x2E.+)/;
-// let usuarios = [];
-// let listarUsuario = document.querySelector("#lista");
-// let mensajeAlerta = document.querySelector("#mensajeAlerta");
-// let mensajeAlertaVerde = document.querySelector("#mensajeAlertaVerde");
 
 // Meter datos al LocalStorage y que se mantengan entre las diferentes urls
 let users = JSON.parse(localStorage.getItem("Usuarios")) || [];
@@ -43,7 +35,7 @@ boton.addEventListener("click", function (e) {
   e.preventDefault();
   userData();
   checkUser();
-  //   checkEmail();
+  redirigir();
 });
 
 // Funcion para crear los usuarios, validar la información y guardarlo en LocalStorage
@@ -109,4 +101,19 @@ function checkUser() {
 
 }
 
+function redirigir() {
+    if (    username.value !== "" &&
+    email.value !== "" &&
+    password.value !== "" &&
+    passConfirm !== "" &&
+    validationEmail.test(email.value) == true &&
+    validationPass.test(password.value) == true &&
+    password.value == passConfirm.value) {
 
+// Al enviar el formulario se redirige a la zona usuarios si se han completado las condiciones
+        window.setTimeout(() => { 
+            window.location.href = "usuarios.html";
+        }, 3500);
+
+    }
+}
