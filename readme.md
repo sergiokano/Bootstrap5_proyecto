@@ -9,7 +9,7 @@
 Consta de una primera parte dedicada a la investigación y de recopilación de datos sobre la herramienta Bootstrap y una segunda en la que hemos aplicado los conocimientos adquiridos durante la semana desarrollando un formulario utilizando Bootstrap con sus correspondientes validaciones.
 
 
-<br
+<br>
 
 <h2 align="center"><b>Investigación</b></h2>
 
@@ -156,3 +156,7 @@ En bootstrap tenemos la opción de subir archivos con el custom file input.
 Scrollspy  funciona según la posición de desplazamiento o la posición en la que el usuario está viendo actualmente.
 
 ![foto](/assets/image6.gif "scrollspy gif")
+
+
+---
+⌨️ hecho por [sergiokano](https://github.com/sergiokano) y [diegopalones](https://github.com/diegopalones) 😊
